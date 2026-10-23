@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>مُنجَز | قائمة مهامي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="مُنجَز - الصفحة الرئيسية"><span class="brand-mark">م</span><span>مُنجَز<span class="brand-dot">.</span></span></a>
+      <div class="today"><span class="live-dot"></span><span id="todayLabel">مساحة إنجازك اليومية</span></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">خطوة صغيرة، إنجاز كبير</p>
+        <h1>خلّ يومك <span>مُنجَز.</span></h1>
+        <p class="hero-subtitle">رتّب أولوياتك، ركّز على المهم، واترك الباقي علينا.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span class="art-sun"></span><span class="art-check">✓</span><span class="art-line line-one"></span><span class="art-line line-two"></span><span class="art-line line-three"></span><span class="art-spark">✦</span></div>
+    </section>
+
+    <section class="stats-grid" aria-label="ملخص المهام">
+      <article class="stat-card"><div class="stat-icon icon-total">☷</div><div><p>إجمالي المهام</p><strong id="totalCount">0</strong></div><span class="stat-caption">كل ما في قائمتك</span></article>
+      <article class="stat-card"><div class="stat-icon icon-done">✓</div><div><p>اكتملت</p><strong id="doneCount">0</strong></div><span class="stat-caption">خطوات أنجزتها</span></article>
+      <article class="stat-card"><div class="stat-icon icon-left">◷</div><div><p>متبقية</p><strong id="remainingCount">0</strong></div><span class="stat-caption">بانتظارك بكل هدوء</span></article>
+    </section>
+
+    <section class="workspace">
+      <div class="progress-panel"><div class="progress-heading"><div><p class="section-kicker">تقدّمك اليوم</p><h2>أنت على الطريق الصحيح <span>✦</span></h2></div><strong id="progressPercent">0%</strong></div><div class="progress-track" role="progressbar" aria-label="نسبة إنجاز المهام" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progressBar"></span></div><p class="progress-note" id="progressMessage">أضف أول مهمة وابدأ إنجازك اليوم ✨</p></div>
+
+      <div class="list-panel">
+        <div class="list-header"><div><p class="section-kicker">مساحة العمل</p><h2>قائمة المهام</h2></div><span class="task-badge" id="listCount">0 مهام</span></div>
+        <form class="add-form" id="taskForm"><label class="sr-only" for="taskInput">اكتب مهمة جديدة</label><span class="input-icon" aria-hidden="true">＋</span><input id="taskInput" type="text" maxlength="100" placeholder="وش خطتك القادمة؟ اكتبها هنا..." autocomplete="off"><button type="submit"><span>＋</span> أضف مهمة</button></form>
+        <div class="toolbar"><div class="filters" role="group" aria-label="تصفية المهام"><button class="filter-btn active" data-filter="all" type="button">الكل <span id="allFilterCount">0</span></button><button class="filter-btn" data-filter="active" type="button">قيد التنفيذ</button><button class="filter-btn" data-filter="completed" type="button">مكتملة</button></div><button class="clear-btn" id="clearCompleted" type="button">مسح المكتملة</button></div>
+        <ul class="task-list" id="taskList" aria-live="polite"></ul>
+        <div class="empty-state" id="emptyState"><div class="empty-illustration"><span>✓</span></div><h3>مساحتك جاهزة للإنجاز</h3><p>أضف أول مهمة، وكل شيء يبدأ بخطوة.</p></div>
+        <footer class="list-footer"><span>✦</span> إنجازك يبدأ من هنا <span class="footer-count" id="footerCount">0 مهمة</span></footer>
+      </div>
+    </section>
+    <footer class="page-footer">صُنع بتركيز، لإنجاز يستحق <span>♥</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
